@@ -1,11 +1,194 @@
-@media (max-width: 640px) {
-    .table-wrapper { overflow-x: visible; border: none; background: none; }
-    table.servicos-table { min-width: 0; display: block; }
-    .servicos-table thead { display: none; }
-    .servicos-table tbody { display: block; }
-    .servicos-table tr { display: block; background: var(--white); border: 1px solid var(--paper-line); border-radius: 8px; margin-bottom: 14px; padding: 14px 16px; }
-    .servicos-table td { display: block; padding: 4px 0; border: none; white-space: normal; }
-    .servicos-table .servico-nome { font-size: 1rem; margin-bottom: 6px; }
-    .servicos-table .duracao::before { content: "Duração: "; color: var(--steel-600); font-weight: 600; }
-    .servicos-table .valor::before { content: "Valor: "; color: var(--steel-600); font-weight: 600; }
-  }
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&D Motos - Serviços</title>
+    <style>
+        :root {
+            --white: #ffffff;
+            --paper-line: #e0e0e0;
+            --steel-600: #424242;
+            --steel-700: #212121;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: var(--steel-700);
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--steel-700);
+        }
+
+        .table-wrapper {
+            background: var(--white);
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid var(--paper-line);
+        }
+
+        table.servicos-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .servicos-table thead {
+            background-color: #f9f9f9;
+            border-bottom: 2px solid var(--paper-line);
+        }
+
+        .servicos-table th {
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+            color: var(--steel-600);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .servicos-table tbody tr {
+            border-bottom: 1px solid var(--paper-line);
+            transition: background-color 0.2s ease;
+        }
+
+        .servicos-table tbody tr:hover {
+            background-color: #fafafa;
+        }
+
+        .servicos-table td {
+            padding: 16px;
+            border: none;
+        }
+
+        .servico-nome {
+            font-weight: 600;
+            color: var(--steel-700);
+            font-size: 1rem;
+        }
+
+        .duracao,
+        .valor {
+            color: var(--steel-600);
+            font-size: 0.875rem;
+        }
+
+        /* Estilos Responsivos */
+        @media (max-width: 640px) {
+            body {
+                padding: 16px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+            }
+
+            .table-wrapper {
+                overflow-x: visible;
+                border: none;
+                background: none;
+            }
+
+            table.servicos-table {
+                min-width: 0;
+                display: block;
+            }
+
+            .servicos-table thead {
+                display: none;
+            }
+
+            .servicos-table tbody {
+                display: block;
+            }
+
+            .servicos-table tr {
+                display: block;
+                background: var(--white);
+                border: 1px solid var(--paper-line);
+                border-radius: 8px;
+                margin-bottom: 14px;
+                padding: 14px 16px;
+            }
+
+            .servicos-table td {
+                display: block;
+                padding: 4px 0;
+                border: none;
+                white-space: normal;
+            }
+
+            .servicos-table .servico-nome {
+                font-size: 1rem;
+                margin-bottom: 6px;
+            }
+
+            .servicos-table .duracao::before {
+                content: "Duração: ";
+                color: var(--steel-600);
+                font-weight: 600;
+            }
+
+            .servicos-table .valor::before {
+                content: "Valor: ";
+                color: var(--steel-600);
+                font-weight: 600;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>🏍️ D&D Motos - Serviços</h1>
+    
+    <div class="table-wrapper">
+        <table class="servicos-table">
+            <thead>
+                <tr>
+                    <th>Serviço</th>
+                    <th>Duração</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="servico-nome">Troca de Óleo</td>
+                    <td class="duracao">30 min</td>
+                    <td class="valor">R$ 80,00</td>
+                </tr>
+                <tr>
+                    <td class="servico-nome">Revisão Completa</td>
+                    <td class="duracao">2h</td>
+                    <td class="valor">R$ 250,00</td>
+                </tr>
+                <tr>
+                    <td class="servico-nome">Troca de Pneu</td>
+                    <td class="duracao">45 min</td>
+                    <td class="valor">R$ 120,00</td>
+                </tr>
+                <tr>
+                    <td class="servico-nome">Alinhamento e Balanceamento</td>
+                    <td class="duracao">1h</td>
+                    <td class="valor">R$ 150,00</td>
+                </tr>
+                <tr>
+                    <td class="servico-nome">Limpeza e Polimento</td>
+                    <td class="duracao">1h 30min</td>
+                    <td class="valor">R$ 180,00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
